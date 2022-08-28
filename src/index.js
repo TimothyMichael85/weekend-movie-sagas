@@ -32,11 +32,13 @@ function* fetchAllMovies() {
         
 }
 
-function* fetchMovie() {
+function* fetchMovie(action) {
     // get just one selected movie from DB
     try {
-        const movies = yield axios.get(`/api/movie/movie/details/${action.payload}`);
-        yield put ({type: 'SET_MOVIES', payload: movies.getElementById});
+        const movies = yield axios.get(`/api/movie/details/${action.payload}`);
+        yield console.log('selected movie is: ', movies.data);
+        yield put ({type: 'SET_MOVIES', payload: movies.data});
+
     } catch (err){
         console.error('error in fetchMovie', err);
     };
