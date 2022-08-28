@@ -41,6 +41,7 @@ function Details () {
             )
         })} 
             <h3>Genre: {genres[0]} </h3>
+            {/* I've tried everything I can think of, but can't get genres to display on the detail page in the dom. Not sure if my SQL is wrong, or if something in the reducer, but anything I put after {genre} comes back undefined  */}
             <button className="homeBtn" onClick={returnHome}>HOME</button>
         </div>
     )
