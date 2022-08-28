@@ -26,8 +26,8 @@ function* fetchAllMovies() {
         console.log('get all:', movies.data);
         yield put({ type: 'SET_MOVIES', payload: movies.data });
 
-    } catch {
-        console.log('get all error');
+    } catch (err){
+        console.error('get all error', err);
     }
         
 }
@@ -35,9 +35,9 @@ function* fetchAllMovies() {
 function* fetchMovie() {
     // get just one selected movie from DB
     try {
-        const movies = yield axios.get('/api/movie');
-        yield put ({type: 'SET_MOVIES', payload: movies.id});
-    } catch {
+        const movies = yield axios.get(`/api/movie/movie/details/${action.payload}`);
+        yield put ({type: 'SET_MOVIES', payload: movies.getElementById});
+    } catch (err){
         console.error('error in fetchMovie', err);
     };
 };
@@ -47,8 +47,8 @@ function* fetchGenres(action) {
     try{
         const genres = yield axios.get(`/api/genre/${action.payload}`);
         yield put ({type: 'SET_GENRES', payload: genres.data});
-    } catch {
-        console.error('error in fetchGenres', err);
+    } catch (err){
+        console.error('error in fetchGenres'), err;
     };
 };
 

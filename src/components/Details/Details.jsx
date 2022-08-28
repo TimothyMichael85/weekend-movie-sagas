@@ -36,7 +36,7 @@ function Details () {
             </div>
             )
         })} 
-            <h3>Genre: {genres[0].genre}</h3>
+            {/* <h3>Genre: {genres[0].genre}</h3> */}
             <button className="homeBtn" onClick={returnHome}>HOME</button>
         </div>
     )
