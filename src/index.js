@@ -35,10 +35,10 @@ function* fetchAllMovies() {
 function* fetchMovie() {
     // get just one selected movie from DB
     try {
-        const movie = yield axios.get('/api/movie');
-        yield put ({type: 'SET_GENRES', payload: movie.id});
+        const movies = yield axios.get('/api/movie');
+        yield put ({type: 'SET_MOVIES', payload: movies.id});
     } catch {
-        console.error('error in fetchGenres', err);
+        console.error('error in fetchMovie', err);
     };
 };
 
