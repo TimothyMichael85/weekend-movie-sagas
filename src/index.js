@@ -32,7 +32,25 @@ function* fetchAllMovies() {
         
 }
 
+function* fetchMovie() {
+    // get just one selected movie from DB
+    try {
+        const movie = yield axios.get('/api/movie');
+        yield put ({type: 'SET_GENRES', payload: movie.id});
+    } catch {
+        console.error('error in fetchGenres', err);
+    };
+};
 
+function* fetchGenres(action) {
+    // get all genres for a movie
+    try{
+        const genres = yield axios.get(`/api/genre/${action.payload}`);
+        yield put ({type: 'SET_GENRES', payload: genres.data});
+    } catch {
+        console.error('error in fetchGenres', err);
+    };
+};
 
 // Create sagaMiddleware
 const sagaMiddleware = createSagaMiddleware();
