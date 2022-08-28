@@ -29,10 +29,11 @@ function Details () {
             {movies.map((movies) => {
                 return (
             <div key={movies.id}> 
-                <h2>{movies.title}</h2>
+                <h2>Title: {movies.title}</h2>
                 <img src={movies.poster} className="image"/>
-                <h3>{movies.description}</h3>
-                
+                <h3>Genre: {genres[0].name}</h3>
+                <h3>Description: {movies.description}</h3>
+                <button className="homeBtn" onClick={returnHome}>HOME</button>
             </div>
             )
         })} 
