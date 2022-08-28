@@ -36,11 +36,11 @@ function Details () {
                 <img src={movie.poster} className="image"/>
                 {/* <h3>Genre: {genres[0].name}</h3> */}
                 <h3>Description: {movie.description}</h3>
-                <button className="homeBtn" onClick={returnHome}>HOME</button>
+                {/* <button className="homeBtn" onClick={returnHome}>HOME</button> */}
             </div>
             )
         })} 
-            {/* <h3>Genre: {genres[0].genre}</h3> */}
+            <h3>Genre: {genres[0]} </h3>
             <button className="homeBtn" onClick={returnHome}>HOME</button>
         </div>
     )
