@@ -23,7 +23,7 @@ function Details () {
 
     useEffect(() => {
         dispatch({ type: 'FETCH_DETAILS', payload: id }) 
-        dispatch({ type: 'FETCH_GENRE', payload: id })
+        dispatch({ type: 'FETCH_GENRES', payload: id })
     },[])
 
     return (
@@ -40,7 +40,7 @@ function Details () {
             </div>
             )
         })} 
-            <h3>Genre: {genres[0]} </h3>
+            <h3>Genre: {genres[0].genre} </h3>
             {/* I've tried everything I can think of, but can't get genres to display on the detail page in the dom. Not sure if my SQL is wrong, or if something in the reducer, but anything I put after {genre} comes back undefined  */}
             <button className="homeBtn" onClick={returnHome}>HOME</button>
         </div>
